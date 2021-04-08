@@ -1,0 +1,46 @@
+{
+    "name": "wilbur-yu/hyperf-source-encrypter",
+    "type": "library",
+    "license": "MIT",
+    "keywords": [
+        "php",
+        "hyperf"
+    ],
+    "description": "Hyperf Source Code Encrypter",
+    "autoload": {
+        "psr-4": {
+            "WilburYu\\HyperfSourceEncrypter\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+        }
+    },
+    "require": {
+        "php": ">=7.3",
+        "hyperf/command": "^2.0",
+        "hyperf/config": "^2.0",
+        "hyperf/utils": "^2.0",
+        "ph-7/obfuscator": "^2.0"
+    },
+    "require-dev": {
+        "mockery/mockery": "^1.0",
+        "phpunit/phpunit": ">=7.0",
+        "swoole/ide-helper": "dev-master",
+        "swow/swow": "dev-develop",
+        "symfony/var-dumper": "^5.1"
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "scripts": {
+        "test": "phpunit -c phpunit.xml --colors=always",
+        "analyse": "phpstan analyse --memory-limit 1024M -l 1 ./src",
+        "cs-fix": "php-cs-fixer fix $1 --config=./.php_cs"
+    },
+    "extra": {
+        "hyperf": {
+            "config": "WilburYu\\HyperfSourceEncrypter\\ConfigProvider"
+        }
+    }
+}
