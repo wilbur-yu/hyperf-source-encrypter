@@ -45,15 +45,6 @@ class SourceEncryptCommand extends Command
 
     public function handle(): void
     {
-        if (! extension_loaded('bolt')) {
-            $this->output->error('Please install bolt.so https://phpBolt.com');
-            $this->output->error('PHP Version ' . PHP_VERSION);
-            $this->output->error('INI file location ' . php_ini_scanned_files());
-            $this->output->error('Extension dir: ' . ini_get('extension_dir'));
-
-            return;
-        }
-
         if (! defined('BASE_PATH')) {
             $this->output->error('constant BASE_PATH undefined');
 
